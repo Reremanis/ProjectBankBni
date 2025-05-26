@@ -1,0 +1,158 @@
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang BNI</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff3e6;
+      color: #333;
+    }
+    header {
+      background-color: #f37021;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+    }
+    .about-section {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .about-section h2 {
+      color: #f37021;
+      margin-top: 0;
+    }
+    .about-section img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .team-section {
+      margin-top: 2rem;
+    }
+    .team-member {
+      display: inline-block;
+      width: 200px;
+      margin: 1rem;
+      text-align: center;
+    }
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    footer {
+      background-color: #f37021;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tentang Kami - BNI</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="form.html">Formulir</a>
+      <a href="about.html">Tentang Kami</a>
+      <a href="contact.html">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-section">
+      <img src="file:///C:/xampp/htdocs/PROJECT%20UTS/bni logo.jpg" alt="Logo BNI">
+      <h2>Sejarah BNI</h2>
+      <p>Bank Negara Indonesia (BNI) didirikan pada tahun 1946 sebagai bank pertama yang dimiliki oleh pemerintah Republik Indonesia yang baru merdeka. Sejak saat itu, BNI telah berkembang menjadi salah satu bank terbesar dan paling terpercaya di Indonesia, dengan jaringan cabang yang tersebar luas di dalam dan luar negeri.</p>
+
+      <h2>Visi Kami</h2>
+      <p>Menjadi Lembaga Keuangan yang Unggul dalam Layanan dan Kinerja Secara Berkelanjutan.</p>
+
+      <h2>Misi Kami</h2>
+      <ul>
+        <li>Memberikan layanan prima dan solusi keuangan yang bernilai tambah kepada seluruh nasabah.</li>
+        <li>Meningkatkan keunggulan kompetitif untuk mendukung pertumbuhan bisnis yang berkelanjutan.</li>
+        <li>Berperan aktif dalam pembangunan ekonomi nasional.</li>
+        <li>Menjadi pilihan utama sebagai mitra bisnis terpercaya.</li>
+      </ul>
+
+      <section class="team-section">
+        <h2>Tim Kami</h2>
+        <div class="team-member">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="CEO">
+          <p><strong>Andi Santoso</strong><br>Direktur Utama</p>
+        </div>
+        <div class="team-member">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="CFO">
+          <p><strong>Siti Rahma</strong><br>Direktur Keuangan</p>
+        </div>
+        <div class="team-member">
+          <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="CTO">
+          <p><strong>Budi Wijaya</strong><br>Direktur Teknologi</p>
+        </div>
+      </section>
+    </section>
+
+    <section style="background-color: #fffbe6; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+      <h2 style="color: #f37021;">Simulasi Tabungan BNI</h2>
+      <form id="simulasiForm">
+        <label>Setoran Bulanan (Rp):
+          <input type="number" id="setoran" required />
+        </label><br/><br/>
+        <label>Jangka Waktu (bulan):
+          <input type="number" id="bulan" required />
+        </label><br/><br/>
+        <label>Bunga Tahunan (%):
+          <input type="number" id="bunga" required value="3" />
+        </label><br/><br/>
+        <button type="submit" style="background-color: #f37021; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px;">Hitung</button>
+      </form>
+      <div id="hasilSimulasi" style="margin-top: 1rem; font-weight: bold;"></div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 BNI. Semua Hak Dilindungi.
+  </footer>
+
+  <script>
+    document.getElementById("simulasiForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const setoran = parseFloat(document.getElementById("setoran").value);
+      const bulan = parseInt(document.getElementById("bulan").value);
+      const bunga = parseFloat(document.getElementById("bunga").value) / 100;
+
+      const totalSimpanan = setoran * bulan;
+      const bungaBulanan = bunga / 12;
+      let akumulasi = 0;
+
+      for (let i = 0; i < bulan; i++) {
+        akumulasi += setoran * Math.pow(1 + bungaBulanan, bulan - i);
+      }
+
+      document.getElementById("hasilSimulasi").textContent =
+        `Estimasi total tabungan setelah ${bulan} bulan adalah: Rp ${akumulasi.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`;
+    });
+  </script>
+</body>
+</html>

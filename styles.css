@@ -1,0 +1,86 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffaf2;
+  color: #333;
+}
+header {
+  background-color: #f37021;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+nav {
+  margin-top: 1rem;
+}
+nav a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+main {
+  padding: 2rem;
+}
+form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form button {
+  background-color: #f37021;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.map-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+iframe {
+  border: none;
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+footer {
+  background-color: #f37021;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.fade-in-message {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  padding: 2rem;
+  background-color: #eafbea;
+  color: #155724;
+  border-radius: 10px;
+  margin-top: 1rem;
+  text-align: center;
+}
+.fade-in-message.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}

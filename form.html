@@ -1,0 +1,164 @@
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulir Daftar Rekening</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff3e6;
+      color: #333;
+    }
+    header {
+      background-color: #f37021;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    form {
+      background-color: white;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+    label {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button[type="submit"] {
+      background-color: #f37021;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    button[type="submit"]:hover {
+      background-color: #d65f1a;
+    }
+    #toggle-mode {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: white;
+      color: #f37021;
+      border: 1px solid #f37021;
+      border-radius: 5px;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    #clock {
+      margin-top: 0.5rem;
+    }
+    .illustration {
+      display: block;
+      margin: 2rem auto;
+      max-width: 600px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+	}
+	.form-success {
+	  display: none;
+	  padding: 2rem;
+	  margin: 2rem auto;
+	  max-width: 600px;
+	  background-color: #e0ffe0;
+	  color: #155724;
+	  border-radius: 10px;
+	  text-align: center;
+	  animation: fadeIn 1s ease-in-out;
+	}
+	.form-success.show {
+	display: block;
+	}
+	@keyframes fadeIn {
+	  from { opacity: 0; transform: translateY(20px); }
+	  to { opacity: 1; transform: translateY(0); }
+	}
+	footer {
+	  background-color: #f37021;
+	  color: white;
+	  text-align: center;
+	  padding: 1rem;
+	  margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Formulir Pendaftaran Rekening</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="form.html">Formulir</a>
+      <a href="about.html">Tentang Kami</a>
+	  <a href="contact.html">Kontak</a>
+      <button id="toggle-mode">🌙/☀️</button>
+    </nav>
+    <p id="clock"></p>
+  </header>
+
+  <main>
+    <img src="file:///C:/xampp/htdocs/PROJECT%20UTS/ilustrasi.jpg" alt="Ilustrasi BNI" class="illustration" />
+    <form onsubmit="handleSubmit(event)">
+      <label>Nama Lengkap:<input type="text" name="nama" required /></label>
+      <label>Email:<input type="email" name="email" required /></label>
+      <label>No. HP:<input type="tel" name="hp" required /></label>
+      <label>Tanggal Lahir:<input type="date" name="dob" required /></label>
+      <label>Alamat:<textarea name="alamat" rows="3" required></textarea></label>
+      <label>Jenis Kelamin:
+        <select name="gender" required>
+          <option value="">--Pilih--</option>
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+      </label>
+      <label>Jenis Tabungan:
+        <select name="jenis" required>
+          <option value="">--Pilih Jenis--</option>
+          <option value="Digital Banking">BNI Digital Banking</option>
+          <option value="Keluarga">Tabungan Keluarga</option>
+          <option value="Taplus Muda">BNI Taplus Muda</option>
+        </select>
+		
+      </label>
+      <label>Upload KTP:<input type="file" name="ktp" accept="image/*,.pdf" required /></label>
+      <button type="submit">Daftar</button>
+	  </form>
+	  
+	   <div id="formConfirmation" class="form-success">
+    <h3>✅ Pendaftaran Berhasil</h3>
+    <p>Data Anda telah berhasil dikirim. Mohon tunggu proses selanjutnya.</p>
+	</div>
+	</main>
+
+  <script src="form-script.js"></script>
+</body>
+</html>

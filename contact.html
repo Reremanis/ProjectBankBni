@@ -1,0 +1,69 @@
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak Kami - BNI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>Kontak Kami</h1>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="form.html">Formulir</a>
+    <a href="about.html">Tentang Kami</a>
+    <a href="contact.html">Kontak</a>
+  </nav>
+</header>
+
+<main>
+  <form id="contactForm">
+    <h2>Hubungi Kami</h2>
+    <label for="name">Nama:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="message">Pesan:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Kirim Pesan</button>
+  </form>
+
+  <div id="confirmationMessage" class="fade-in-message">
+    <h3>✅ Pesan Anda telah berhasil dikirim.</h3>
+    <p>Terima kasih telah menghubungi kami. Mohon tunggu proses selanjutnya.</p>
+  </div>
+
+	<main>
+    <section class="contact-info">
+      <h2>Informasi Kontak</h2>
+      <p><strong>Alamat:</strong> Said Perintah No.12, Kel Honipopu, Kec. Sirimau, Kota Ambon, Maluku 97126</p>
+      <p><strong>Email:</strong> contact@bni.co.id</p>
+      <p><strong>Telepon:</strong> 1500046</p>
+      <p><strong>Jam Operasional:</strong> Senin - Jumat, 08.00 - 17.00 WIB</p>
+      <div class="social-icons">
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="Instagram">📸</a>
+        <a href="#" title="Twitter">🐦</a>
+      </div>
+  <div class="map-container">
+    <h2>Lokasi Kami</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127623.77319301435!2d128.182452!3d-3.6964601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d6ce84e4cd0a847%3A0xd20e7fb2b55c4332!2sBNI%20KCU%20Ambon!5e0!3m2!1sen!2sid!4v1681462444497!5m2!1sen!2sid" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 BNI. Semua Hak Dilindungi.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
