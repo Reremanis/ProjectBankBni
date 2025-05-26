@@ -1,2 +1,3 @@
 # ProjectBankBni
-hallo semua
+hallo semua ini adalah project uts saya (Rere) yang ditugaskan oleh dosen pengampuh : bpk.Ahmad Thariq. Ini adalah project mengenai Bank BNI yang saya buat sendiri.
+Selamat mengeksplor semua...
